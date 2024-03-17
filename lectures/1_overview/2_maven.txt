@@ -1,0 +1,5 @@
+
+    Maven
+        คล้ายกับ node modules
+        โดยจะรวบรวม dependencies ในรูปแบบของ jar file ที่โปรเจคต้องการใช้
+        เช่น Spring, Hibernate, Commons Logging, JSON
