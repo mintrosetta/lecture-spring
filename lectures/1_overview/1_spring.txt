@@ -18,4 +18,42 @@
             Spring MVC
             Spring REST
 
-    
+    Java POJO (Plain old java object)
+
+    Core Container
+        Bean
+            เป็น object ที่ถูกจัดการโดย Spring
+        Core 
+        SpEL (Spring expression languege)
+        Context
+
+    Infrastructure
+        AOP 
+            ทำให้เราสามารถแทรกฟังก์ชันการทำงานเข้าไปได้โดยไม่ต้องแก้ไขโค้ดชุดเดิม
+        Aspects
+        Instrumentation
+        Mssaging
+
+    Data Access Layer
+    มีไว้เพื่อการสื่อสารระหว่างฐาข้อมูลกับแอบพิเคชั ทั้ง Relationship database และ NoSQL Database
+        JDBC
+            จัดเตรียม Helper classes
+        ORM
+            Object Relational Mapping ด้วย Hibernate และ JPA
+        Transactions
+        จัดการกับ Transaction control
+            OXM
+            JMS
+                Java message service
+                เป็นการส่งข้อมูลในรูปแบบของ asynchronues
+
+    Web layer 
+        Servlet
+        WebSocket
+        Web
+
+    Test Layer 
+    Spring support Test-Driven-Develpment
+        Unit
+        Integration
+        Mock
