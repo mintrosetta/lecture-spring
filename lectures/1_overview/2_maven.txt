@@ -22,3 +22,28 @@
                 java        จะเก็บ unit testing source code และ properties file ที่จะใช้ในการ test
                 resource
         target              จัดเก็ย source code ที่ถูก compile แล้ว
+
+    pom.xml
+        Project Object Model file 
+        ใช้สำหรับตั้งค่าโปรเจคของเรา
+        โดจะประกอบไปด้วย
+            Project meta data
+                สำหรับการตั้งค่าโปรเจค เช่น project name, version, output file type
+            dependencies 
+                รายการของโปรเจคที่เราต้องพึ่งพา เช่น Spring, Hibernate
+            plug ins
+
+    Project Coordinates
+        ใช้สำหรับระบุ Uniquely Identify ของ project เพื่อทำให้โปรเจคไม่ซ้ำกัน
+        โดยจะประกอบด้วย
+            GroupId
+                เป็นชื่อของบริษัท กลุ่ม หรือองกรค์ โดยจะถูกนำไปตั้งเป็น package name
+            Artifact Id 
+                ชื่อของโครงการ เช่น AdopPix
+            Version 
+                ระบุ version ของโครงการ เช่น 1.0, 1.4, 1.7.2
+                เราสามารถเติม -SNAPSHOT ไว้ด้านหลังเลข version เพื่อระบุว่าเป็นเวอร์ชันที่กำละงพัฒนา 
+                เช่น 1.8.2-SNAPSHOT
+
+    เราสามารถหา dependencies ได้โดยใช้
+    https://mvnrepository.com/
