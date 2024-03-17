@@ -1,0 +1,21 @@
+
+    Spring
+        เป็น framework ที่ใช้สร้าง Java Application
+        โดยจะมี Helper Classes และ Annotations ให้ใช้งาน
+
+    Spring Boot
+        รวบรวม Dependencies และ Configuration ที่จำเป็นสำหรับสร้าง HTTP Server
+        โดยเบี้องหลังของ Spring Boot จะมี Spring ทำงานอยู่
+
+        สามารถใช้ Spring Initializer ในการสร้าง Project ได้ (https://start.spring.io/)
+
+        ภายใน Jar file ที่ spring จัดการให้ จะมีไฟล์โปรเจคของเราและ server tomcat มาให้แล้ว
+        โดยสามารถสั่งให้ทำงานได้ด้วยคำสั่ง java -jar myapp.jar
+
+        โดย spring boot จะใช้ Dependencies เหล่านี้อยู่เบื้องหลัง เช่น
+            Spring Core
+            Spring AOP 
+            Spring MVC
+            Spring REST
+
+    
