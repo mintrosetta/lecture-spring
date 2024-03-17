@@ -1,11 +1,24 @@
 
-    Maven
+    Maven (Project management tools)
         คล้ายกับ node modules
         โดยจะรวบรวม dependencies ในรูปแบบของ jar file ที่โปรเจคต้องการใช้
         เช่น Spring, Hibernate, Commons Logging, JSON
+
+        สามารถดู dependencies ทั้งหมดที่ใช้อยู่ได้ใ pom.xml
 
     Spring Initializr
         Group
             ไอดีของกลุ่มโปรเจค
         Artifact
             ชื่อของแอบพลิเคชัน
+
+    Standard Directory Structure
+        src 
+            main 
+                java        ใช้เก็บ Java source code 
+                resource    ใช้เก็บ properties/ config file 
+                webapp      สำหรับเก็บ asset เช่น html, css, javascript, images
+            test 
+                java        จะเก็บ unit testing source code และ properties file ที่จะใช้ในการ test
+                resource
+        target              จัดเก็ย source code ที่ถูก compile แล้ว
