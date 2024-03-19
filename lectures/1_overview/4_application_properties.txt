@@ -1,0 +1,21 @@
+
+    Application Properties
+        โดยค่าเริ่มต้น spring จะโหลด Properties จาก application.properties
+        โดยจะต้องถูกเก็บไว้ใน source/main/resources
+
+        โดยเราสามารถเพิ่ม properties ได้ดังนี้
+            server.port=8585
+            สั่งให้ http server รอรับ request ที่พอร์ท 8585
+
+        และยังสามารถกำหนด properties ของเราเองได้
+        เช่น
+            coach.name=Mint Rosetta
+            team.name=The Mouse Crew
+        
+        และสามารถเรียกใช้งานได้ผ่าน Injection
+        เช่น
+        @RestController
+        public class FunRestController {
+            @Value("${coach.name}")
+            private String coachName;
+        }
