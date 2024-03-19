@@ -1,0 +1,14 @@
+
+    Project Wrapper file
+        mvnw & mvnw.cmd
+            ทำให้เราสามารถรันโครงการที่เป็ Maven ได้โดยไม่จำเป็ตต้องติดตั้ง maven ลง pc
+            โดยถ้าหากมันไม่เจอ maven บน pc ของเรา มันจะทำการ download ลงมาที่เครื่องก่อนเรียกใช้
+
+            ถ้าหากมีบนเครื่องเราแล้ว สามารถลบออกไปได้เลย
+
+        โดยคำสั่งของ maven 
+            mvnw clean compile test 
+            ใช้สำหรับทดสอบ maven
+
+            mvnw spring-boot:run
+            สั่งให้ run โครงการ spring boot
