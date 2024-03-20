@@ -1,0 +1,15 @@
+
+    spring-boot-starter-web
+        รวบรวม Dependencies ที่จำเป็นสำหรับการสร้าง Http Server
+        เช่น 
+            spring-web 
+            spring-webmvc
+            hibernate-validator
+            json
+            tomcat
+
+    spring-boot-starter-security
+        สำหรับสนับสนุนความปลอดภัยของ spring
+
+    spring-boot-starter-data-jpa 
+        สำหรับสนับสนุนการเข้าถึงฐานข้อมูลด้วย JPA และ Hibernate
