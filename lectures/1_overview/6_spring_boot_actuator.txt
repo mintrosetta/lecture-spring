@@ -1,0 +1,33 @@
+    https://developers.ascendcorp.com/%E0%B8%97%E0%B8%B3%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B8%A3%E0%B8%B9%E0%B9%89%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%81%E0%B8%B1%E0%B8%9A-spring-boot-actuator-%E0%B9%80%E0%B8%9A%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%95%E0%B9%89%E0%B8%99-9df9519814cc
+    Spring Boot Actuator
+        ทำให้เราสามารถ monitors application ของเราได้
+        เช่น
+            health information
+            database connection
+            ตรวจสอบ heap size
+
+        โดยเราสามารถเพิ่ม Dependencies เข้าไปที่ pom.xml หลังจากนั้นมันจะทำงานอัตโนมัติ
+
+        สามารถระบุว่าจะให้ใช้ endpoint อะไรได้บ้าง โดยจะกำหรดไว้ใน application.properties
+        เช่น 
+            management.endpoint.web.exposure.include=info,health 
+                ให้ใช้ได้แค่ /info, /health 
+            management.endpoint.web.exposure.include=*
+                ให้ใช้ได้ทุก endpoint
+
+        โดยจะมี endpoint ให้ใช้ดังนี้
+            /health 
+                ใช้สำหรับตรวจสอบว่า server ยังทำงานอยู่หรือไม่
+            /info 
+                ให้ข้อมูลเพิ่มเติมเกี่ยวกับ application 
+                โดยสามารถตั้งค่าได้ใน application.properties
+                เช่น 
+                    info.app.name=Finance Next
+                    info.app.description=Manage your money
+                    info.app.version=0.0.1-SNAPSHOT
+            /auditevents
+                ดูรายการกิจกรรมที่เกิดขึ้น
+            /beans
+                ดูว่ามี bean ไหนบ้างที่ถูกจัดการด้วย spring
+            /mappings
+                ดูรายการทั้งหมดที่เป็น @RequestMapping path

@@ -14,7 +14,11 @@
     spring-boot-starter-data-jpa 
         สำหรับสนับสนุนการเข้าถึงฐานข้อมูลด้วย JPA และ Hibernate
 
-    spring-boot-debtools
+    spring-boot-devtools
         ทำให้โครงการสามารถ reload ได้อัตโนมัติ
+    
+    spring-boot-starter-actuator
+        ใช้สำหรับจัดการ (monitoring) กับ spring boot ในระดับ production
+
 
     
