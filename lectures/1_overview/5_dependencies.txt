@@ -20,5 +20,14 @@
     spring-boot-starter-actuator
         ใช้สำหรับจัดการ (monitoring) กับ spring boot ในระดับ production
 
+    spring-boot-starter-security 
+        ใช้สำหรับเพิ่มความปลอดภัยให้กับระบบ
+        โดยจะมี default user มาให้คือ
+            username: user
+            password: สามารภดูได้ที่ console
+        เราสามารถตั้งค่า user เองได้ที่ application.properties 
+            spring.security.user.name={username}
+            spring.security.user.password={password}
+        และเราสามารถตั้งค่า user ไว้ใน database
 
     

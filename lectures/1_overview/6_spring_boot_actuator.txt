@@ -33,3 +33,6 @@
                 ดูรายการทั้งหมดที่เป็น @RequestMapping path
             /threaddump
                 แสดงรายการ thread ที่กำลังทำงานอยู่ทั้งหมด
+
+    Spring Security
+        ใช้สำหรับยืนยันตัวตนก่อนเข้ามาใช้งาน endpoints ได้
