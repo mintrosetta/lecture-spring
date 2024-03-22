@@ -31,3 +31,5 @@
                 ดูว่ามี bean ไหนบ้างที่ถูกจัดการด้วย spring
             /mappings
                 ดูรายการทั้งหมดที่เป็น @RequestMapping path
+            /threaddump
+                แสดงรายการ thread ที่กำลังทำงานอยู่ทั้งหมด

@@ -22,4 +22,9 @@ public class FunRestController {
     public String getDailyFortune() {
         return "Today is you lucky day.";
     }
+    
+    @GetMapping("/user")
+    public String getUser() {
+    	return "Mint Rosetta";
+    }
 }
