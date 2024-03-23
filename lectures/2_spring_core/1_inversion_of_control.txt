@@ -5,6 +5,8 @@
         Object Factory (Spring Container)
             เป็น container ที่ใช้จัดการกับ object โดยเมื่อใครก็ตามต้องการเรียกใช้ object 
             จะต้องมาเรียกใช้ผ่าน spring container
+            
+            โดย object ที่ถูกจัดการโดย Spring Container จะถูกเรียกว่า Spring Beans
 
         โดยเราสามารถตั้งค่า Spring container ได้ 2 วิธี
         คือ

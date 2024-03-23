@@ -14,3 +14,7 @@
                 Spring จะทำการค้นหาทุก class ที่มี @Component
                 แล้วตรวจสอบว่ามีใครต้องใช้ class นี้บ้างไหม
                 จากนั้นจะทำการสร้าง object ของ class แล้ว inject ไปให้
+
+        @Component
+            เป็นการระบุว่า class นี้เป็น Spring Beans โดย Spring Beans จะถูกจัดการด้วย Spring Container
+            และพร้อมสำหรับ injection
