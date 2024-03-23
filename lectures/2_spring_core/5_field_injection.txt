@@ -1,0 +1,4 @@
+
+    Field Injection (ไม่แนะนำ เพราะจะใช้้งานได้ยากใน unit test)
+        @Autowired
+        private Coach coach;
