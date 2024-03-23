@@ -1,0 +1,16 @@
+
+    Dependency Injection 
+        เทคนิคหนึ่งในการเขียนโปรแกรม โดยจะใช้การส่งต่อ (inject) ตัว object ที่ถูกสร้างไว้ใน container 
+        แทนการสร้าง object เองขึ้นมาใหม่
+
+        โดยเราสามารถ inject ได้ 2 แบบ
+        คือ
+            Constructor Injection (แนะนำ)
+            Setter Injection
+
+        Spring Autowired
+            เป็นการบอกให้ Spring ทำการ inject object ให้กับ class หรือ interface อัตโนมัติ
+            โดยจะมีขัน้ตอนการทำงาน คือ 
+                Spring จะทำการค้นหาทุก class ที่มี @Component
+                แล้วตรวจสอบว่ามีใครต้องใช้ class นี้บ้างไหม
+                จากนั้นจะทำการสร้าง object ของ class แล้ว inject ไปให้
