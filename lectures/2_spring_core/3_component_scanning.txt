@@ -1,0 +1,19 @@
+
+    Component Scanning
+        Spring จะค้นหาคลาสทั้งหมดที่มี @Component และจะสร้าง object ไว้ใน Spring Container ให้อัตโนมัติ
+
+        @SpringBootApplication
+            จะทำหน้าที่เรียกใช้อีก 3 Annotation ให้กับเรา
+                Auto configuration @EnableAutoConfiguration
+                Component Scanning @ComponentScan
+                Additional configuration @Configuration
+
+        ค่าเริ่มต้นจะค้นหาใน package ที่ main อยู่
+        โดยจะค้นหาทั้ง package
+        ถ้านอกนั้นจะหาไม่เจอ แต่เราสามารถสั่งให้ spring ไปทำการค้นหาได้ 
+        @SpringBootApplication(
+            scanBasePackage={
+                "com.luv2code.springcoredemo",
+                "com.luv2code.services"
+            }
+        )
