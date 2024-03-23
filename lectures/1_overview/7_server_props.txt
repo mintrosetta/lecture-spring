@@ -17,4 +17,5 @@
             spring.datasource.username={username}
             username ของฐานข้อมูล
 
+            spring.datasource.password={password}
             password ของฐานข้อมูล
