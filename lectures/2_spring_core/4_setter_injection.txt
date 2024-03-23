@@ -1,0 +1,8 @@
+
+    Setter Injection
+        เป็นการ inject ผ่าน setter method
+
+        เบื้องหลังการทำงาน
+            A a = new A();
+            B b = new B();
+            b.setA(a);
