@@ -19,3 +19,6 @@
             @Value("${coach.name}")
             private String coachName;
         }
+
+        ในการตั้งค่า application เราไม่ควรใส่การตั้งค่าไว้ใน code เลย เราควรนำมาใส่ไว้ที่ application.properties 
+        แล้วค่อยอ่านค่าจากไฟล์ โดยสามารถเข้าถึงค่าได้ผ่าน @Value
