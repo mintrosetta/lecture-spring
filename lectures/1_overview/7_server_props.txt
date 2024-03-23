@@ -1,0 +1,20 @@
+
+    Spring Boot Server Properties
+        โดยปกคิ Spring จะมี properties ให้เราสามารถตั้งค่าได้
+        เช่น
+            server.port={port}
+            เป็นการตั้งค่า port ของ server 
+
+            server.servlet.context-path=/api 
+            เป็นการตั้งค่า path เริ่มต้นของ server
+
+            server.servlet.session.timeout=15m
+            เป็นการตั้งค่าระยะเวลาของ session
+
+            spring.datasource.url={database url}
+            เป็นการตั้งค่า path ของฐานข้อมูล
+
+            spring.datasource.username={username}
+            username ของฐานข้อมูล
+
+            password ของฐานข้อมูล
