@@ -18,3 +18,9 @@
         @Component
             เป็นการระบุว่า class นี้เป็น Spring Beans โดย Spring Beans จะถูกจัดการด้วย Spring Container
             และพร้อมสำหรับ injection
+
+
+    Spring Process Behind
+        Spring จะสร้าง object ให้กับเรา และทำการส่งมาให้
+            A a = new A();
+            B b = new B(a);
