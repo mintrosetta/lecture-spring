@@ -1,0 +1,21 @@
+
+    Bean Scopes
+        ค่าเริ่มต้นคือ Singleton
+        โดยเราสามารถระบุ Scope ได้โดยใช้ @Scope 
+        เช่น
+            @Component
+            @Scope(ConfigurationBeanFactory.SCOPE_SINGLETON)
+            public class UserService implements IUserService { }
+
+        Singleton
+            สร้างแค่ 1 instance ของ bean
+            ทำการเก็บ instance ไว้ใน memory
+            ทุก ๆ inject จะถูก reference มาที่ instance เดียวกัน
+
+        Prototype
+            สร้าง bean instance ใหม่สำหรับการ inject แต่ละครั้ง
+
+        Request
+            สร้าง bean instance เมื่อมี HTTP Request เข้ามา
+
+        
