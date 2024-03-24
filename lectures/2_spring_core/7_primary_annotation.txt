@@ -1,0 +1,12 @@
+
+    Primary Annotation
+        ใช้สำหรับระบุว่า class ที่ implement ไปตัวไหนเป็น class หลักที่จะใช้ในการระบุการทำงาน
+        ทำให้ไม่ต้องใช้ @Qualifier
+        โดย @Primary จะใช้ได้แค่ class เดียวของ interface นั้น ๆ
+    
+        เช่น 
+            @Component
+            @Primary
+            public class TrackCoach implements ICoach {
+
+            }
