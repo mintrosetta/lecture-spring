@@ -1,0 +1,16 @@
+
+    Quelifier
+        ถ้าเกิดกรณีที่ interface ที่เราต้องการ inject เข้าไปให้กับ class ถูก implement จากหลายที่
+        เช่น 
+            Coach <-- CricketCoach
+            Coach <-- BaseballCoach
+
+        เราต้องใช้ quelifier ในการระบุว่าจะใช้ class implement ตัวไหนในการทำงาน
+        เช่น
+            @Autowired 
+            public DemoController(@Quelifier("cricketCoach") ICoach coach) {
+
+            }
+
+        @Quelifier({bean id})
+        
