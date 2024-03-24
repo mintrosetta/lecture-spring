@@ -1,0 +1,19 @@
+
+    Bean Lifecycle
+        Container started
+        Bean Instantiated
+        Dependencies Injected
+        Internal Spring Processing
+        [Your custom init menthod]
+        Bean us ready for use 
+        Container shutdown
+        [Your custom destroy method]
+        Stop
+
+        เราสามารถสั่ง method ของเราให้ทำงานได้เมื่อ bean ถูกสร้างขึ้น
+            @PostConstructor
+            menthod
+
+        เราสามารถสั่ง method ของเราให้ทำงานได้เมื่อ bean หยุดการทำงาน
+            @PreDestroy
+            method
