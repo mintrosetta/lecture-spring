@@ -1,0 +1,15 @@
+
+    Lazy Initialization
+        โดยค่าเริ่มต้น เมื่อ application เริ่มทำงาน ทุก ๆ beans (@Component) จะถูกสร้างขึ้นมาทันที
+
+        โดยเราสามารถเพิ่ม @Lazy เข้าไปให้กับ class ได้ โดยจะเป็นการระบุว่า
+            จะสร้างขึ้นก็ต่อเมื่อมี class ต้องการ inject 
+            มีการร้องขอ
+
+        ตัวอย่าง
+            @Component
+            @Lazy
+            public class A implements B { }
+
+        สามารถตั้งค่าที่ application.properties ได้ โดยจะเป็นการสั่งให้ beans ทุกตัวเป็นแบบ lazy load
+            spring.main.lazy-initialization=true
