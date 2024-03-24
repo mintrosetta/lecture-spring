@@ -1,0 +1,40 @@
+
+    Java Config Bean
+        เราสามารถตั้งค่า Java Bean ได้
+        โดยจะมี annotation ดังนี้
+            @Configuration 
+                ใช้สำหรับบอกว่า class ที่ระบุจะเป็น class ที่ใช้กำหนดค่าของ bean
+                โดยปกติจะมีเพียง 1 class ใน 1 project
+            @Bean
+                ใช้ระบุว่า method นี้จะเป็น method สำหรับกำหดค่าให้กับ bean ใน Spring Containner
+                โดยเมื่อ application เริ่มทำงาน คลาสที่มี @Configuration จะถูกเรียกใช้งาน และ @Configuration
+                จะเรียกใช้งาน @Bean ทุกตัว
+
+                ชื่อ method จะถูกนำไปตั้งเป็น bean id แต่เราสามารถตั้งชื่อของเราเองได้ @Bean("{bean id}")
+
+        เราอาจจะได้ใช้ทั้งคู่ในกรณีที่เราต้องการนำ third-party class เข้ามาใช้งานใน application 
+        และต้องการทำให้มันถูกจัดการด้วย Spring Container
+
+        เช่น 
+            AWS สร้าง Class service ขึ้นมา แต่ไม่ได้สร้างเป็น bean ไว้ 
+            เราไม่สามารถเข้าถึง source code ได้ และไม่สามารถแก้ไขได้ ทำให้เข้าไปเพิ่ม @Component ไม่ได้ 
+            เราจึงต้องใช้ @Configuration และ @Bean เข้ามาช่วย
+
+            @Configuration
+            public class AWSConfig {
+                @Bean 
+                public S3Client remoteClient() {
+                    S3Client s3 = new S3Client();
+                    return s3;
+                }
+            }
+
+            @Component
+            public class UserService implements IUserService {
+                private S3Client s3;
+
+                @Autowired
+                public UserService(S3Client s3) {
+                    this.s3 = s3;
+                }
+            }
