@@ -40,3 +40,7 @@
     EntityManager 
         เป็น JPA Helper Object ที่ช่วยจัดกับกับข้อมูลและฐานข้อมูล
         โดยสามารถทำได้ทั้งใช้งาน function ที่มีให้และเขียน sql เอง
+
+    JDBC (Java Database Connectivity)
+        API (Application Programming Interface) หรือ library ในจาวาที่ใช้สำหรับติดต่อกับฐานข้อมูล
+        ที่เป็นแบบ relational อย่างเช่น MS SQL, Oracle, MySQL, DB2, Informix เป็นต้น
