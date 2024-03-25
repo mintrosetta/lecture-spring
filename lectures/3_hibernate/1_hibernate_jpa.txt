@@ -1,0 +1,42 @@
+
+    Hibernate
+        เป็น framework ที่จัดการระหว่าง Java Object กับ database
+
+        Your java application <---> Hibernate <---> Database
+
+        โดย Hibernate จะคอยจัดการกับ low-level sql ให้กับเรา
+        สาารถืำ Object-to-Relational Mapping (ORM)
+
+    Object to Relational Mapping
+        เป็นการเชื่อมต่อโครงสร้างข้อมูลระหว่าง class กับ table
+        เช่น 
+            class User
+                id: int
+                firstName: string
+                lastName: string 
+                email: string 
+
+            table Users 
+                id INT 
+                fist_name VARCHAR(45)
+                last_name VARCHAR(45)
+                email VARCHAR(45)
+
+    Jakarta Persistence API (JPA)
+        เป็น standard api สำหรับ ORM
+
+        โดยจะมีเพียงชุดของ inteface เท่านั้น จะต้องนำไป implement ต่อเอง
+        
+    JPA Vendor implement
+        โดยจะมีหลาย ๆ เจ้าสืบทอด JPA ไปทำการเขียนความสามารถขึ้นมาเองดังนี้
+            Hibernate
+            EclipseLink
+
+    ประโยชน์ของ JPA 
+        เมื่อมีมาตรฐานของ API, ทำให้เราไม่จำเป็นต้องติดอยู่กับระบบ ๆ เดียว
+        สามารถดูแลรักษาได้ง่าย
+        สาารถสลับไปมาระหว่าง Hibernate กับ EclipseLink ได้
+
+    EntityManager 
+        เป็น JPA Helper Object ที่ช่วยจัดกับกับข้อมูลและฐานข้อมูล
+        โดยสามารถทำได้ทั้งใช้งาน function ที่มีให้และเขียน sql เอง
