@@ -30,4 +30,5 @@
             spring.security.user.password={password}
         และเราสามารถตั้งค่า user ไว้ใน database
 
-    
+    mysql-connector-j
+        ใช้สำหรับเชื่อมต่อกับ MySQL
