@@ -1,0 +1,4 @@
+
+    Comnand Line Runner
+        มาจาก Spring Framework
+        ทำให้เราสามารถ exucute code หลังจาก Beans ถูกโหลดเรียบร้อยแล้ว

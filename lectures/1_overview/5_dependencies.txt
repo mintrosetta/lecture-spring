@@ -32,3 +32,10 @@
 
     mysql-connector-j
         ใช้สำหรับเชื่อมต่อกับ MySQL
+        สามารถตั้งค่าที่ application.properties ได้ดังนี้
+            spring.datasource.url={db_url}
+            spring.datasource.username={db_username}
+            spring.datasource.password={db_password}
+
+    spring-data-jpa
+        ใช้สำหรับจัดการกับฐานข้อมูลในรูปแบบของ ORM ด้วย JPA และ Hibernate
