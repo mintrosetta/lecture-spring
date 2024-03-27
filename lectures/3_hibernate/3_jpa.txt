@@ -1,0 +1,39 @@
+
+    JPA Development Process
+        ใส่ annotate ให้กับ java class 
+        สร้าง field ให้ตรงกับ database โดย 
+            class จะเป็น table
+            field จะเป็น column ของ table
+
+    JPA
+        Hibernate เป็น default implement ของ jpa ใน Spring Boot
+
+    Entity Class 
+        เป็น Java class ที่เป็นตัวแทนของ Table ใน Database
+        โดยจะต้องระบุ @Entity ไว้ด้านบน class และตามด้วย @Table(name={table_name})
+        เช่น 
+            @Entity
+            @Table(name="students")
+            public class Student {
+                @Id
+                @Column(name="id")
+                private int id;
+
+                @Column(name="first_name")
+                private String firstName;
+            }
+
+    Annotation
+        @Entity
+            ใช้ระบุว่าคล่านั้นเป็น Entity Class 
+        @Table (optional)
+            ใช้ระบุข้อมูลเกี่ยวกับ Table เพื่อเชื่อมกับ Entity Class
+        @Id 
+            ใช้ระบุว่า field นั้นเป็น Primary Key
+        @Column (optional)
+            ใช้ระบุข้อมูลของ Column
+        @GeneratedValue(strategy=GenerationTye.IDENTITY)
+            สั่งให้ pk ทำการสร้าง id อัตโนมัติตามตัวเลข (auto increment)
+            เราสามารถสร้าง id ในแบบของเราเองได้ โดยการ
+                implements org.hibernate.id.IdentifierGenerator
+                ทำการ override public Serializable generate()
