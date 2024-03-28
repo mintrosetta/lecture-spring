@@ -23,3 +23,7 @@
         Jpa Repository
             Spring Data Jpa จะมี interface ของ JpaRepository ซึ่งจะสร้างการเข้าถึง database 
             ให่กับเรา โดยจะมีระบบการทำงานคร่าว ๆ ให้
+
+        Step
+            Defind DAO interface
+            Define DAO Implementation

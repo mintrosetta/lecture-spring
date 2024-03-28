@@ -37,3 +37,8 @@
             เราสามารถสร้าง id ในแบบของเราเองได้ โดยการ
                 implements org.hibernate.id.IdentifierGenerator
                 ทำการ override public Serializable generate()
+        @Transactional
+            ใช้สำหรับจัดการกับ Transaction Management เช่น commit, rollback
+        @Repository
+            เป็นส่วนหนึ่งของ @Component ใช้สำหรับใส่ให้กับ class ที่เป็น DAO
+            โดยสามารถช่วยแปลข้อผิดพลาดที่เกิดขึ้นกับ JDBC ได้ด้วย
