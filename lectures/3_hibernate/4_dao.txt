@@ -1,0 +1,25 @@
+
+    Data Access Object (DAO)
+        มีหน้าที่รับผิดชอบการเชื่อมต่อกับฐานข้อมูล 
+        [Application] <---> [Model DAO] <---> [Database]
+
+        เช่น StudentDAO จะเชื่อมกับ table Students ในญฐานข้อมูล
+        
+        method ของ DAO 
+            save()
+            findById()
+            findAll()
+            findByLastName()
+            update()
+            delete()
+            deleteAll()
+
+        DAO จำเป็นต้องพึ่งพา JPA Entity Manager
+
+        JPA Entity Manager
+            เป็นองค์ประกับหลักสำหรับบันทึกและเรียกข้อมูลโดย entity
+            [dao] <---> [entity manager] <---> [datasource] <---> [database]
+
+        Jpa Repository
+            Spring Data Jpa จะมี interface ของ JpaRepository ซึ่งจะสร้างการเข้าถึง database 
+            ให่กับเรา โดยจะมีระบบการทำงานคร่าว ๆ ให้
