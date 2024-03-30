@@ -18,11 +18,26 @@ public class CruddemoApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
 		return runner -> {
-			createStudent(studentDAO);
+			// createStudent(studentDAO);
+			createMultipleStudent(studentDAO);
 		};
 	}
 
-	private void createStudent(StudentDAO studentDAO) {
+	public void createMultipleStudent(StudentDAO studentDAO) {
+		// create multiple students
+		System.out.println("Creating new student object");
+		Student student1 = new Student("Mint", "Rosetta", "mint.rosetta2001@gmail.com");
+		Student student2 = new Student("Mint", "Colorful", "mint.colorful2001@gmail.com");
+		Student student3 = new Student("Mint", "Hiroshi", "mint.hiroshi2001@gmail.com");
+		
+		// save the student object
+		System.out.println("Saving the students");
+		studentDAO.save(student1);
+		studentDAO.save(student2);
+		studentDAO.save(student3);
+	}
+
+	public void createStudent(StudentDAO studentDAO) {
 		// create the student object
 		System.out.println("Creating new student object");
 		Student student = new Student("Mint", "Rosetta", "mint.rosetta2001@gmail.com");
