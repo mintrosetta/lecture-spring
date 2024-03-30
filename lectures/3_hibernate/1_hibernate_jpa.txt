@@ -44,3 +44,22 @@
     JDBC (Java Database Connectivity)
         API (Application Programming Interface) หรือ library ในจาวาที่ใช้สำหรับติดต่อกับฐานข้อมูล
         ที่เป็นแบบ relational อย่างเช่น MS SQL, Oracle, MySQL, DB2, Informix เป็นต้น
+
+    เราสามารถตั้งค่าให้ Hibernate สร้าง table ให้กับเราได้ โดยอ้างอิงจาก Java Code (ไม่แนะนำให้ใช้ใน production)
+        application.properties 
+            spring.jpa.hibernate.ddl-auto=none 
+                ไม่มีอะไรเกิดขึ้น
+            spring.jpa.hibernate.ddl-auto=create-only
+                สร้าง table อย่างเดียว
+            spring.jpa.hibernate.ddl-auto=drop
+                ลบ table อย่างเดียว
+            spring.jpa.hibernate.ddl-auto=create 
+                เมื่อ application ทำงาน ให้ทำการลบ table เก่าออก และสร้าง table ใหม่ขึ้นมา
+            spring.jpa.hibernate.ddl-auto=create-drop 
+                เมื่อ application ทำงาน ให้ทำการลบ table เก่าออก และสร้าง table ใหม่ขึ้นมา
+                เมื่อ application หยุดทำงาน จะ drop table ทิ้งทั้งหมด
+                นิยมใช้ใน unit testing
+            spring.jpa.hibernate.ddl-auto=validate
+                ตรวจสอบโครงสร้างของฐานข้อมูล
+            spring.jpa.hibernate.ddl-auto=update 
+                จัดการอัพเดทที่เหมาะสมให้กับเรา
