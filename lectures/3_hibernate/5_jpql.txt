@@ -19,3 +19,6 @@
             "From Student"
             "FROM Student WHERE lastName = 'Doe' or lastName = 'Rosetta'"
             "FROM Student WHERE email LIKE '%@gmail.com'"
+
+        สามารถสร้าง Query สำหรับการ update object ได้
+        int numRowsUpdated = this.entityManager.createQuery("UPDATE Student SET lastName = :lastTame").exucuteUpdate();
