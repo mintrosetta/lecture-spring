@@ -1,0 +1,21 @@
+
+    JPA Query Language
+        เป็นภาษา SQL ที่ใช้กับ JPA โดยเฉพาะ โดยจะใช้ดึงข้อมูลจากฐานข้อมูลอย่างเดียว
+        โดยจะใช้ฐานมาจาก Entity name และ Entity field แทน table
+
+        ตัวอย่าง
+            TypedQuery<EntityName> query = this.entityManager.createQuery("FROM EntityName", EntityName.class);
+            List<EntityName> entities = query.getResultList();
+
+            TypedQuery<Student> query = this.entityManager.createQuery("FROM Student WHERE lastName = 'Doe'", Student.class);
+            List<Student> entities = query.getResultList();
+
+            สามารถส่ง Named Parameter เข้าไปได้
+                TypedQuery<Student> query = this.entityManager.createQuery("FROM Student WHERE lastName = :lastName", Student.class);
+                query.setParameter("lastName", "Doe");
+                List<Student> entities = query.getResultList();
+
+        ตัวอย่าง Query
+            "From Student"
+            "FROM Student WHERE lastName = 'Doe' or lastName = 'Rosetta'"
+            "FROM Student WHERE email LIKE '%@gmail.com'"
