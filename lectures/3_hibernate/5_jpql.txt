@@ -22,3 +22,6 @@
 
         สามารถสร้าง Query สำหรับการ update object ได้
         int numRowsUpdated = this.entityManager.createQuery("UPDATE Student SET lastName = :lastTame").exucuteUpdate();
+
+        exucuteUpdate 
+            จะเป็นการใช้งานกับ query ที่ทำให้ข้อมูลใน databasse เปลี่ยนไป เช่น insert, update, delete
