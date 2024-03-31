@@ -1,0 +1,44 @@
+
+    Http Basic
+
+    Http Method
+        POST
+            ใช้สำหรับสร้างข้อมูลใหม่
+        GET
+            ใช้สำหรับอ่านข้อมูล
+        PUT
+            ใช้สำหรับเปลี่ยนแปลงข้อมูลที่มีอยู่แล้ว
+        DELETE
+            ใช้สำหรับลบข้อมูล
+
+    Http Request Message
+        ประกอบด้วย
+            Request line
+                เป็น Http command ซึ่งเป็นคำสั่งที่ใช้จัดการกับ Http 
+                เช่น เป็น GET หรือ POST
+            Request variable
+                metadata ของ http ซึ่งเป็นข้อมูลเพิ่มเติมเกี่ยวกับคำขอ
+            Message body
+                เป็น payload ซึ่งจัดเก็บเนื้อหาที่จะส่งไปกับคำขอ
+
+    Http Response Message 
+        ประกอบด้วย 
+            Response line 
+                จัดเก็บ server protocol และ status code
+            Header variable
+                จัดเก็บ metadata ซึ่งเป็นข้อมูลเกี่ยวกับการตอบกลับ เช่น 
+                content-type, size
+            Message variable
+                เป็น payload จัดเก็บเนื้อหาที่จะตอบกลับ
+
+    Http Status Code 
+        100 - 100 
+            information
+        200 - 299
+            Succesful
+        300 - 399
+            redirection
+        400 - 499
+            client error
+        500 - 599
+            server error
