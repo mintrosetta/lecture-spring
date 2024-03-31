@@ -1,0 +1,9 @@
+
+    JavaScript Object Notation (JSON)
+        เป็นเพียงรูปแบบการแลกเปลี่ยนข้อมูลที่มีขนาดเล็ก
+        โดยสามารถเก็บข้อมูลในรูปแบบ number, string, boolean, json object, array, null
+
+        รูปแบบ
+            {
+                key: value
+            }
