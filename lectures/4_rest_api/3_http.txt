@@ -42,3 +42,7 @@
             client error
         500 - 599
             server error
+
+    @RestController
+        ทำให้ spring controller เป็นรูปแบบ Rest API ซึ่งจะช่วยในการสร้าง response 
+        ในรูปแบบของ json
