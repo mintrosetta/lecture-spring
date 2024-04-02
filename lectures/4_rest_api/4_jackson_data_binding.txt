@@ -1,0 +1,27 @@
+
+    Jackson Data Binding
+        เป็นขั้นตอนการเปลี่ยนแปลงข้อมูลจาก JSON เป็น Java Pojo (เป็น Java Object ธรรมดา)
+        และสามารถเปลื่อนแปลงจาก Java POJO เป็น JSON
+
+        [JSON] <---> [Data Binding] <---> [Java POJO]
+
+        Spring จะใช้ jackson ทำงานอยู่เบื้องหลัง โดยมันทำหน้าที่ data binding ให้กับเรา
+        โดยสนับสนุน XML, JSON
+
+
+        เมื่อต้องการแปรงข้อมูขจาก JSON เป็น Pojo มันจะอ้างอิง field ที่ต้องการข้อมูลจาก setter 
+        เช่น 
+            ใน JSON มี key ชื่อว่า Id 
+            มันจะเรียกใช้ setter Id ของ java pojo 
+
+            {
+                "id": 1
+            } 
+
+            student.setId(1);
+
+        เมื่อต้องการแปรงข้อมูขจาก Pojo เป็น JSON 
+        มันจะอ้างอิงจาก getter ของ Pojo
+
+
+        
