@@ -1,0 +1,3 @@
+
+    Post Construct (@PostConstruct)
+        จะสั่งให้ method ที่ระบุทำงานแค่ครั้งเดียวเมื่อได้รับ bean
