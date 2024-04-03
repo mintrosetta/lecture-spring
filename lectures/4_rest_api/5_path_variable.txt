@@ -1,0 +1,14 @@
+
+    Path Variable
+        ค่าค่าที่ถูกส่งมากับตัวแปรใน path 
+
+        ตัวอย่าง
+            /api/students/{studentId}
+            ในที่นี้ {studentId} คือ path variable
+
+        โดยเราสามารถดึงข้อมูล path variable ได้โดยใช้ @PathVariable
+        เช่น 
+            @GetMappging("/student/{studentId}")
+            public Student getStudent(@PathVariable int studentId) {
+                return null;
+            }
