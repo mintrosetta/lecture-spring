@@ -1,0 +1,14 @@
+
+    Spring Rest Exception Handler
+        ใช้จัดการกับ Error ที่เกิดขึ้นและทำการ return ข้อมูลของ error ออกไป
+        เช่น
+            {
+                "status": 404,
+                "message": "Student id not found - 999",
+                "timestamp": 2323232
+            }
+
+    โดยเราจะมีขั้นตอนดังนี้
+        1. สร้าง class สำหรับตอบกลับข้อมูล
+        2. สร้าง class สำหรับจัดการกับ exception ด้วย annotation @ExceptionHandler
+        3. เมื่อเกิด error ให้สั่ง throw exception
