@@ -1,5 +1,6 @@
 package com.luv2code.demo.rest;
 
+// class for custom exception
 public class StudentNotFoundException extends RuntimeException {
 	/**
 	 * 
