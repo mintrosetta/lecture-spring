@@ -1,0 +1,15 @@
+
+    Spring Global Exception Handling
+        ทำให้เราสามารถสร้าง Exception Handler ไว้ที่เดียว แล้วคอยจัดการกับ Exception 
+        จากทุก ๆ controller ได้
+
+    @ControllerAdvice
+        เป็น Interceptor หรือ filter 
+        โดยสามารถ 
+            Pro-process
+                ใช้สำหรับดำเนินการบางอย่างก่อนที่ request จะเข้าไปถึง controller
+            Post-process 
+                ใช่สำหรับจัดการกับการตอบกลับด้วย handler exception ได้
+        โดยมันใช้ concept เดียวกันกับ Spring AOP
+
+        [client] <---> [controller advice] <-> [rest service]
