@@ -9,3 +9,15 @@
             1. ตรวจสอบความต้องการของ API
             2. ระบุทรัพยากรณ์หลักและ entity ที่ต้องจัดการ เช่น employee
             3. Http method ที่จะใช้จัดการกับทรัพากรณ์ที่ระบุ
+
+        ตัวอย่าง CRUD 
+            [POST] /api/employees
+                ใช้สำหรับสร้างพนักงานใหม่ในฐานข้อมูล
+            [GET] /api/employees
+                ใช้สำหรับดึงรายชื่อหนักงานทั้งหมด
+            [GET] /api/employees/{employeeId}
+                ใช้สำหรับดึงชื่อหนักงานด้วยไอดี
+            [PUT] /api/employees/{employeeId}
+                ใช้สำหรับแก้ไขข้อมูลหนักงานที่ระบุ
+            [DELETE] /api/employees/{employeeId}
+                ใช้สำหรับลบข้อมูลพนักงานที่ระบุ
