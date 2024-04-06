@@ -12,3 +12,22 @@
         1. สร้าง class สำหรับตอบกลับข้อมูล
         2. สร้าง class สำหรับจัดการกับ exception ด้วย annotation @ExceptionHandler
         3. เมื่อเกิด error ให้สั่ง throw exception
+
+
+    ResponseEntity
+        ใช้สำหรับควบคุมข้อมูลที่จะตอบกลับ
+
+    @ExceptionHandler 
+        เป็นการระบุว่า method ดังกล่าวจะทำงานเมื่อเกิด exception ตาม type ที่เกิดขึ้น
+        เช่น
+            @ExceptionHandler 
+            public ResponseEntity<StudentErrorResponse> handleException(StudentNotFoundException exc) {
+
+            }
+
+            @ExceptionHandler
+                ระบุว่า method นี้ใช้จัดการกับ exception 
+            ResponseEntity<StudentErrorResponse>
+                ระบุ type ที่จะตอบกลับไป 
+            StudentNotFoundException
+                ระบุ type ของ exception ไว้ใน parameter ที่จะให้ method ทำงาน
