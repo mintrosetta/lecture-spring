@@ -1,0 +1,21 @@
+
+    เราสามารถสั่งให้่ Spring สร้าง DAO ให้กับเราโดยมี method สำหรับ CRUD ให้เลย
+    ไม่ต้องมาสร้างทีละอัน 
+
+    โดยเราเพียงแค่ระบุ Entity Type และ Primary Key ก็เพียงพอ
+
+    ตัวอย่าง method ที่มีให้
+        findAll()
+        findById()
+        save()
+        deleteById()
+
+    public interface EmployeeRepository extends JpaRepository<employee, Integer>{
+
+    }
+
+    Optional<Entity>
+        เป็นคลาสที่มีความสามารถในการตรวจสอบค่า null เพื่อดูว่ามีค่าหรือไม่
+
+        isPresent()
+            ถ้ามี่ค่าจะส่งคืน true, ถ้าไม่จะเป็น false
