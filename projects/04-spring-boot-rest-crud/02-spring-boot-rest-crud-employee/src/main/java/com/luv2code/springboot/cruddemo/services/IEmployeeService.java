@@ -6,4 +6,7 @@ import com.luv2code.springboot.cruddemo.entity.Employee;
 
 public interface IEmployeeService {
 	List<Employee> finds();
+	Employee findById(int id);
+	Employee save(Employee employee);
+	void removeById(int id);
 }
