@@ -1,0 +1,18 @@
+
+    Spring Security Model
+        Spring Security with Servlet filters
+            - ใช้สำหรับการทำงานแบบ pre-process / post-process ของ web request
+            - สามารถกำหนดเส้นทางของ web requst เองได้ตามเงื่อนไขของ security logic
+            - มีฟังก์ชันรักษาความปลอดภัยจำนวนมาก 
+
+        ตัวอย่างความสามารถของ Spring Security
+            - สามารถป้องกันการเข้าถึง web resource ที่ไม่ได้รับอนุญาติได้
+            [client] <---> [spring security filter] <---> [resource]
+
+        Declarative Security
+            มีการกำหนดการตั้งค่าความปลอดภัยไว้ใน configuration โดยจะกำหนดไว้ใน class ที่มี @Configuration 
+
+        Programmatic Security
+            เป็นการแก้ไขโค้ดของแอบพลิเคชั่น เพื่อให้ตรงกับความต้องการของระบบ
+
+        dependencies: spring-boot-starter-security
