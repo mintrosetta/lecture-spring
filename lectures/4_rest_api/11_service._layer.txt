@@ -1,0 +1,10 @@
+
+    Spring Boot Service Layer
+        ทำหน้าที่อยุ่ระหว่าง controller และ dao 
+        โดยจะใช้สำหรับเขียน Business Logic ไว้ที่ layer นี้
+        และสามารถใช้เพื่อรวบรวมข้อมูลจากหลาย ๆ ที่ได้ก่อนส่างให้กับ controller
+
+        [controller] <---> [service] <---> [dao]
+
+        @Service 
+            ใช้เพื่อระบุว่า class นี้เป็น service และทำให้ component scanning หาเจอ
