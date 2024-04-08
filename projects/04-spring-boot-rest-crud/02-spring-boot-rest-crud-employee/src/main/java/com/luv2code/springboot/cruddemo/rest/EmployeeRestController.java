@@ -9,19 +9,20 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.luv2code.springboot.cruddemo.dao.IEmployeeDAO;
 import com.luv2code.springboot.cruddemo.entity.Employee;
+import com.luv2code.springboot.cruddemo.services.IEmployeeService;
 
 @RestController
 @RequestMapping("/api/employees")
 public class EmployeeRestController {
-	private IEmployeeDAO employeeDAO;
+	private IEmployeeService employeeService;
 	
 	@Autowired 
-	public EmployeeRestController(IEmployeeDAO employeeDAO) {
-		this.employeeDAO = employeeDAO;
+	public EmployeeRestController(IEmployeeService employeeService) {
+		this.employeeService = employeeService;
 	}
 	
 	@GetMapping("")
 	public List<Employee> getEmployees() {
-		return this.employeeDAO.findAll();
+		return this.employeeService.finds();
 	}
 }
