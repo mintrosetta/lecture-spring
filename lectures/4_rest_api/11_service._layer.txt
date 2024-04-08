@@ -8,3 +8,6 @@
 
         @Service 
             ใช้เพื่อระบุว่า class นี้เป็น service และทำให้ component scanning หาเจอ
+
+        Best Practice
+            ควรมีการควบคุม transaction ที่ service layer แทนที่ dao

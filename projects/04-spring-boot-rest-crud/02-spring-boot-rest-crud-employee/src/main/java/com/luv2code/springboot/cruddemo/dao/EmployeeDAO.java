@@ -33,4 +33,31 @@ public class EmployeeDAO implements IEmployeeDAO {
 		return employees;
 	}
 
+	@Override
+	public Employee findById(int id) {
+		// get employee 
+		Employee employee = this.entityManager.find(Employee.class, id);
+		
+		// return
+		return employee;
+	}
+
+	@Override
+	public Employee save(Employee employee) {
+		// save employee 
+		Employee updatedEmployee = this.entityManager.merge(employee); // if id is null will create, else will update
+		
+		// return updated employee
+		return updatedEmployee;
+	}
+
+	@Override
+	public void removeById(int id) {
+		// find by id
+		Employee employee = this.entityManager.find(Employee.class, id);
+		
+		// remove
+		this.entityManager.remove(employee);
+	}
+
 }
