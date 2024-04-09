@@ -1,0 +1,23 @@
+
+    Configuration 
+        เราสามารถตั้งค่า user ได้ดังนี้ 
+
+        เป็น method สำหรับคั้งค่า user เก็บไว้ใน memory
+        @Bean 
+        public InMemoryUserDetailsManager userDetailsManager() {
+
+        }
+
+        UserDetails 
+            ใชัสำหรับตั้งค่า user 
+            UserDetails user = User.builder()
+                .username("")
+                .passwrod("")
+                .roles("", ""),
+                .build();
+
+        password แบ่งการเก็บเป็ 2 รูปแบบ
+            {noop} Plain text password 
+                เป็น password ในรูปแบบตัวอักษรทั่วไป ไม่มีการเข้ารหัส
+            {brypt}
+                เข้ารหัสด้วย BCrypt ซึ่งเป็น one way hashing
