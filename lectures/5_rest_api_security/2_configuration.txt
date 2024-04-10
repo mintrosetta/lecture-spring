@@ -21,3 +21,21 @@
                 เป็น password ในรูปแบบตัวอักษรทั่วไป ไม่มีการเข้ารหัส
             {brypt}
                 เข้ารหัสด้วย BCrypt ซึ่งเป็น one way hashing
+
+
+        เราสามารถตรวจสอบ Role ของผู้ใช้ได้ด้วยคำสั่ง
+        requestMatchers(<path to match>).hasRole(<role>);
+        requestMatchers(<http method>, <path to match>).hasRole(<role>);
+
+        @Bean
+        public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+            http.authorizeHttpRequests(config -> 
+                config.requestMatchers(HttpMethod.GET, "/api/employees").hasRole("EMPLOYEE"));
+
+            http.httpBasic(Customizer.withDefaults());
+
+            // เราสามารถ disable ได้ถ้าเป็นในรูปแบบ Stateless REST API
+            http.csrf(csrf -> csrf.disable());
+
+            return http.build();
+        }
