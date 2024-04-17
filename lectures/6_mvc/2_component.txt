@@ -1,0 +1,26 @@
+
+    Component of Spring MVC Application
+        Web Page
+            ชุดของหน้าเว็บไซต์เพื่อจัดการกับ User Interface
+        Beans
+            Spring Beans ต่าง ๆ เช่น Controllers, Services
+        Spring Configuration
+            การตั้งค่าโปรเจค ด้วย XML หรือ Java Annotation
+
+    Spring Behind the Scenes
+        Web Browser ---> Front Controller -> Model -> Controller -> Model -> View Template ---> Web Browser
+
+        Front Controller 
+            จะถูกเรียกอีกชื่อว่า DispatcherServlet เป็นส่วนหนึ่งของ Spring
+            โดยจะทำหน้าที่มอบ request ให้กับ object อื่น ๆ ในระบบของเรา
+
+    MVC 
+        Model object 
+            จัดเก็บข้อมูลของระบบจาก databaes, service
+        View template 
+            ใช้สำหรับจัดการกับการแสดงผลข้อมูลของหน้าเว็บ โดยนิยมใช้ Thymeleaf
+        Controller classes
+            จัดเก็บชุดคำสั่งทางธุรกิจ (Business Logic) เช่น 
+                - จัดการกับคำขอ
+                - จัดเก็บหรือเรียกข้อมูลจากฐานข้อมูล
+                - นำข้อมูลเข้าไปใส่ model
