@@ -35,3 +35,6 @@
             addAttribute("name", value);
                 ใช้สำหรับส่งข้อมูลไปให้ client โดย client สามารถเข้าถึงข้อมูลได้ผ่านชื่อที่กำหนด
                 <span th:text="${name}">
+
+    HttpServletRequest
+        ใช้สำหรับเข้าถึงข้อมูลของ request ที่ถูกส่งเข้ามา เช่น header, body
