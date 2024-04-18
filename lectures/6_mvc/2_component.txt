@@ -38,3 +38,9 @@
 
     HttpServletRequest
         ใช้สำหรับเข้าถึงข้อมูลของ request ที่ถูกส่งเข้ามา เช่น header, body
+        
+    @RequestParam
+        ใช้สำหรับดึงค่าจาก parameter ที่อยู่ใน url 
+        เช่น
+            url: http://localhost:8080?studentName=rosetta
+            @RequestParam("studentName") String name;
