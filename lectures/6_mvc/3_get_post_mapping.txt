@@ -1,0 +1,20 @@
+
+    @GetMapping
+        ใช้สำหรับ request ที่ต้องการดึงทรัพยากรณ์
+
+    @PostMapping
+        ใช้สำหรับ request ที่ต้องการสร้างทรัพยากรณ์ใหม่
+
+    ถ้าใช้งาน @RequestMapping จะต้องทำการระบุ method ด้วย 
+    @RequestMapping(path="/processForm", method=RequestMethod.GET)
+
+    ทั้ง 2 อย่างมีข้อต่างกัน 
+        Request method GET 
+            - สามารถ debugging ได้ง่าย
+            - สามารถนำไปสร้าง bookmark หรือ email url ได้ 
+            - แต่จำกัดขนาดของข้อมูล
+        
+        Request meothod POST 
+            - ไม่สามารถนำไปสร้าง bookmark หรือ email url ได้
+            - ไม่จำกัดขนาดของข้อมูล
+            - สามารถส่งข้อมูลแบบ binary ได้
