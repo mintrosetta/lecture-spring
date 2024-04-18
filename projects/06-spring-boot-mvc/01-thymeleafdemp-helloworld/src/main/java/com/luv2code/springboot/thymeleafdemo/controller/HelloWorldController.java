@@ -3,6 +3,7 @@ package com.luv2code.springboot.thymeleafdemo.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import jakarta.servlet.http.HttpServletRequest;
 
@@ -35,6 +36,16 @@ public class HelloWorldController {
         String result = "Yo! " + name;
         
         // add message to model
+        model.addAttribute("message", result);
+
+        return "helloworld";
+    }
+
+    @RequestMapping("/processFormV3")
+    public String processFormV3(@RequestParam("studentName") String name, Model model) {
+        name = name.toUpperCase();
+        String result = "Hey my friend from V3 " + name;
+
         model.addAttribute("message", result);
 
         return "helloworld";
