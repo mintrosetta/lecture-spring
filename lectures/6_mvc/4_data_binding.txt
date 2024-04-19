@@ -1,0 +1,44 @@
+
+    Data Binding
+        Spring MVC สามารถผูกข้อมูลระหว่าง form กับ Java Object ได้โดยอัตโนมัติ
+
+        โดยเราจะต้องสร้าง instance ของ Java Object และส่งไปให้หน้าบ้านผ่าน Attribute
+        เช่น 
+
+        @GetMapping("/students/create")
+        public String createStudent(Model model) {
+            model.addAttribute("student", new Student());
+
+            return "student-create-form";
+        }
+
+        ในส่วนของหน้าบ้านสามารถผูกข้อมูลของ form เข้ากับ model ที่ถูกส่งมาใน attribute ได้ดังนี้
+        <form th:action="@{/processStudentForm}" th:object="${student}" method="POST">
+            <label>First name</label>
+            <input type="text" th:field="*{firstName}" />
+
+            <label>Last name</label>
+            <input type="text" th:field="*{lastName}" />
+
+            <input type="submit" value="Submit" />
+        </form>
+
+        Symbol $
+            ใช้สำหรับอ้างอิงถึงวัตถุ
+        Symbol *
+            ใช้สำหรับอ้างอิงถึง field ใน object
+
+        Behind Scence ของ th:field 
+            จะไปเรียกใช้ getter ของ object 
+            เช่น 
+                th:field="*{firstName}"
+                student.getFirstName();
+
+            และเมื่อต้องการ submit form มันจะเรียกใช้ setter ของ object 
+            เช่น 
+                student.setFirstName(value);
+
+        @ModelAttribute
+            ใช้สำหรับดึงข้อมูลจาก attribute มาผูกกับ object 
+            เช่น 
+                @ModelAttribute("student") Student student 
