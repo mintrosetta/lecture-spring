@@ -17,6 +17,9 @@ import com.luv2code.springboot.thymeleafdemo.model.Student;
 public class StudentController {
     @Value("${countries}") // get data from application.properties by key
     private List<String> countries;
+
+    @Value("${favoriteLanguage}")
+    private List<String> favoriteLanguages;
     
     @GetMapping("/create")
     public String showForm(Model model) {
@@ -28,6 +31,9 @@ public class StudentController {
 
         // add list of countries to the model
         model.addAttribute("countries", this.countries);
+
+        // add list of favorite language to the model
+        model.addAttribute("favoriteLanguages", this.favoriteLanguages);
 
         return "student-create";
     }
