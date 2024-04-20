@@ -14,9 +14,8 @@
         <br>
         Country:
         <select th:field="*{country}">
-            <option th:value="Brazil">Brazil</option>
-            <option th:value="Thailand">Thailand</option>
-            <option th:value="China">China</option>
+            <!-- Loop get countries from model -->
+            <option th:each="country : ${countries}" th:value="${country}" th:text="${country}"></option>
         </select>
         <br>
         <input type="submit" value="Submit">
