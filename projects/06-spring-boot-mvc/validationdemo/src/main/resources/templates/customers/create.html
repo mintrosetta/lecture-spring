@@ -13,7 +13,7 @@
 <body>
     <h3>Customer Registration</h3>
 
-    <form th:action="@{/customer/create}" th:object="customer" method="POST">
+    <form th:action="@{/customer/create}" th:object="${customer}" method="POST">
         First name (*): <input type="text" th:field="*{firstName}">
         <br>
         Last name (*): <input type="text" th:field="*{lastName}">

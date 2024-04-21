@@ -19,3 +19,13 @@
         @Valid 
             เป็นการสั่งให้ Spring MVC ทำการเตรวจสอบความถูกต้องของข้อมูลก่อน และผลลัพธ์ของการตรวจสอบจะถูกนำไปใส่ไว้ที่ BindingResult
             โดยเราสามารถเรียกใข้งาน method .hasErrors() เพื่อตรวจสอบว่ามีข้อผิดพลาดเกิดขึ้นหรือไม่
+
+        @InitBinder
+            เป็น annotation ฬห้เราสามารถรประมวลผลร่วงหน้าได้ก่อนที่ request จะเข้าไปที่ controller
+            เช่น 
+                @InitBinder
+                public void InitBinder(WebDataBinder dataBinder) {
+                    //ลบช่องว่างและตั้งค่าให้เป็น null หากข้อความว่าง
+                    StringTrimmerEditor stringTrimmerEditor = new StringTrimmerEditor(true);
+                    dataBinder.registerCustomEditor(String.class, stringTrimmerEditor);
+                }
