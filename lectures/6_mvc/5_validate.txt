@@ -1,0 +1,17 @@
+
+    Java Validation
+        java มี validation api ไว้ให้เราอยู่แล้ว
+        ตัวอย่างเช่น
+            required
+            validate length
+            validate numbers
+            validate with regular expressions
+            custom validation
+
+        Validate Annotation
+            @NotNull  ข้อมูลของ field จะต้องไม่ใช่ค่าว่าง             
+            @Min ใช้กับตัวเลข ค่าที่อยู่ใน field จะต้องมากกว่าที่ระบุ
+            @Max ใช้กับตัวเลข ค่าที่อยู่ใน field จะต้องน้อยกว่าที่ระบุ
+            @Size ขนาดของข้อมูลข้อความจะต้องตรงกับที่ระบุ
+            @Pattern เป็น regular expressions
+            @Future / @Past ใช้สำหรับตรวจสอบข้อมูลวันที่
