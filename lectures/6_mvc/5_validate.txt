@@ -29,3 +29,7 @@
                     StringTrimmerEditor stringTrimmerEditor = new StringTrimmerEditor(true);
                     dataBinder.registerCustomEditor(String.class, stringTrimmerEditor);
                 }
+
+        ใน DTO 
+            การใช้งาน wrapper class จะดีกว่า เพราะเมื่อเจอข้อมูลที่เป็น white space ทันจะตัดเป็น Null ให้เลย
+            ทำให้ง่ายต่อการ validate
