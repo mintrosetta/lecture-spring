@@ -1,0 +1,48 @@
+
+    Custom Validation
+        เราสามารถ custom validate ให้ตรงกับ business logic ของเราเองได้
+
+        @Contraint(validatedBy = CourseCodeConstraintValidator.class)
+        @Target({ ElementType.METHOD, ElementType.FIELD })
+        @Retention(RetentionPolicy.RUNTIME)
+        public @interface CourceCode {
+            public String value() default "LUV";
+            piblic String message() default "must start with LUV";
+        }
+
+        public class CourseCodeConstraintValidator implements ContraintValidator<CourseCode, String> {
+            private String coursePrefix;
+
+            @Override
+            public void initialize(CourceCode courseCode) {
+                this.coursePrefix = courseCode.value();
+            }
+
+            // spring จะเรียกใช้งาน isValid โดยอัตโนมัติ
+            // code คือสิ่งที่ผู้ใช้ใส่เข้ามา
+            @Override
+            public boolean isValid(String code, ContraintValidatorContext contraintValidatorContext) {
+                boolean result;
+
+                if (code != null) {
+                    result = code.startWith(this.coursePrefix);
+                } else {
+                    result = true; // return true เพราะว่า method นี้ไม่ได้รับผิดชอบหน้าที่ในการตรวจสอบ not null
+                }
+
+                return result;
+            }
+        }
+
+        @interface
+            เป็น inteface ชนิดพิเศษ ทำให้เราสามารถนำไปสร้างเป็น annotation ได้
+
+        @Contraint
+            ใช้สำหรับระบุ class ที่เขียนการทำงานของ validate ไว้
+
+        @Target
+            ใช้ระบุว่า annotation นี้จะสามารถเรียกใช้จากที่ไหนได้บ้าง
+
+        @Retention
+            เป็นการระบุว่าจะเก็บ annotation นี้ไว้ที่ไหน 
+            โดยเราได้ระบุ RetentionPolicy.RUNTIME หมายความว่า ให้เก็บไว้ในระหว่าง RUNTIME

@@ -1,5 +1,7 @@
 package com.luv2code.springdemo.mvc.model;
 
+import com.luv2code.springdemo.mvc.annotations.CourseCode;
+
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
@@ -22,6 +24,10 @@ public class Customer {
     @NotNull(message = "is required")
     @Pattern(regexp = "^[a-zA-Z0-9]{5}", message = "only 5 chars or digits")
     private String postalCode;
+
+    @NotNull(message = "is required")
+    @CourseCode(value = "LUV", message = "must start with \"LUV\" ")
+    private String courseCode;
 
     public Customer() {
         
@@ -57,6 +63,14 @@ public class Customer {
 
     public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
+    }
+
+    public String getCourseCode() {
+        return courseCode;
+    }
+
+    public void setCourseCode(String courseCode) {
+        this.courseCode = courseCode;
     }
     
 }
