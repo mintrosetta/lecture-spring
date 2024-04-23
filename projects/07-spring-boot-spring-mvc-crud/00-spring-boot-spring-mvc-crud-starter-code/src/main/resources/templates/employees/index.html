@@ -30,8 +30,12 @@
                 <td th:text="${employee.firstName}"></td>
                 <td th:text="${employee.lastName}"></td>
                 <td th:text="${employee.email}"></td>
-                <td class="d-flex justify-content-center">
+                <td class="d-flex justify-content-evenly">
                     <a th:href="@{/employees/update(employeeId=${employee.Id})}" class="btn btn-primary">Update</a>
+                    <a 
+                    th:href="@{/employees/delete(employeeId=${employee.Id})}" 
+                    class="btn btn-danger"
+                    onclick="if (!confirm('Are you sure you want to delete this employee ?')) return false">Delete</a>
                 </td>
             </tr>
         </tbody>
