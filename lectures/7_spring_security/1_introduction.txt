@@ -1,0 +1,29 @@
+
+    Spring Secutity
+        - ทำให้เราสามารถตั้งค่า user และ roles บน server ของเราได้
+        - ป้องกันการเข้าถึงที่ไม่ได้รับอนุญาติ
+        - ซ่อนเนื้อหาตาม role ของผู้ใช้
+
+        เบื้องหลังการทำงานจะใช้ Servlet Filter ในการทำงาน
+
+        Servlet Filter
+            จะถูกใช้งานโดย pre-process / post-process โดยขึ้นอยู่กับ Security Logic
+
+            [Web browser] <---> [Security Filter] <---> [Resource]
+
+        Security Concept
+            Authentication
+                ใช้สำหรับตรวจสอบว่าข้อมูลที่ใช้ในการยืนยันตัวตนถูกต้องหรือไม่
+            Authorizstion
+                ตรวจสอบว่าผู้ใช้มีสิทธื์เข้าถึงหรือไม่
+
+        เราสามารถ config ใน 2 วิธี
+            Define application security in configuration
+                java class ที่มี @Configuration
+            Programmatic Security
+                ให้ spring จัดเตรียม config ให้เรา
+
+        Spring Login method
+            - HTTP Basic Authentication
+            - Default login form
+            - Custom login form
