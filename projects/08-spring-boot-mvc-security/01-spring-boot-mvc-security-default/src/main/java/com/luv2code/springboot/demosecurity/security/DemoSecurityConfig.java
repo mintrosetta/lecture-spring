@@ -2,9 +2,11 @@ package com.luv2code.springboot.demosecurity.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 public class DemoSecurityConfig {
@@ -18,4 +20,19 @@ public class DemoSecurityConfig {
         return new InMemoryUserDetailsManager(john, mary, susan);
     }
 
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        /*
+         *   authenticated() ทุก request ที่เกิดขึ้นจะต้องมีการยืนยันตัวตน
+         *   loginPage() ระบุุ url ที่ใช้สำหรับดึงหน้าเข้าสู่ระบบ
+         *   loginPrecessingUrl() ระบุ url ที่จะใช้ประมวลผลการเข้าสู่ระบบ
+         *   permitAll() ทุกคนสามารถเข้าถึงสิ่งนี้ได้
+         *
+         *   loginProcessingUrl ไม่จำเป็นต้องมี controller เนื่องจาก spring security จะจัดการให้เราเอง
+         * */
+        http.authorizeHttpRequests(config -> config.anyRequest().authenticated())
+                .formLogin(form -> form.loginPage("/auth/login").loginProcessingUrl("/auth/login"));
+
+        return http.build();
+    }
 }
