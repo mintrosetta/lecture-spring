@@ -1,0 +1,6 @@
+
+    Context Root Path
+        เป็นสัญลักษณ์ @ ใช้สำหรับดึงค่า URL Path ปัจจุบันที่กำลังทำงานด้วย
+        เช่น
+            > ="@{/auth/login}"
+            > https://localhost:8080/auth/login
