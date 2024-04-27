@@ -30,8 +30,9 @@ public class DemoSecurityConfig {
          *
          *   loginProcessingUrl ไม่จำเป็นต้องมี controller เนื่องจาก spring security จะจัดการให้เราเอง
          * */
-        http.authorizeHttpRequests(config -> config.anyRequest().authenticated())
-                .formLogin(form -> form.loginPage("/auth/login").loginProcessingUrl("/auth/login"));
+    	
+    	http.authorizeHttpRequests(config -> config.anyRequest().authenticated())
+    		.formLogin(config -> config.loginPage("/auth/login").loginProcessingUrl("/auth/login-process").permitAll());
 
         return http.build();
     }
