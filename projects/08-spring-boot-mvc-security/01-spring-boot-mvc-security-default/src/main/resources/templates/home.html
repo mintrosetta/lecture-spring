@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-secutiry">
 <head>
     <meta charset="UTF-8">
     <title>Luv2code Company Home Page - Yoohoo!!</title>
@@ -8,6 +8,15 @@
     <h2>luv2code Company Home Page</h2>
     <hr>
     <p>Welcome to the luv2code company home page!</p>
+    <hr>
+    
+    <!-- Display username and role -->
+    <div>
+        <p>User: <span sec:authentication="principal.username"></span></p>
+        <p>Role(s): <span sec:authentication="principal.authorities"></span></p>
+    </div>
+    <hr>
+
     <!-- Add a logout button -->
     <form th:action="@{/logout}" method="post">
         <button type="submit">logout</button>
