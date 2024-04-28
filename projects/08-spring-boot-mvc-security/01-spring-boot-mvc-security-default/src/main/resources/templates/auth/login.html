@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Login Page</title>
+	<style>
+		.failed {
+			color: red;
+		}
+	</style>
 </head>
 <body>
     <h3>Login Page</h3>
@@ -15,6 +20,10 @@
 		<div>
 			<p>Password:</p>
 			<input type="text" name="password">
+		</div>
+		<!-- check error for login error -->
+		<div th:if="${param.error}">
+			<i class="failed">Sorry! you etered invalid username/password.</i>
 		</div>
 		<button type="submit">Login</button>
     </form>
