@@ -17,6 +17,12 @@
     </div>
     <hr>
 
+    <!-- Add link to point /leaders -->
+    <p>
+        <a th:href="@{/leaders}">Leadership Meeting</a>
+        (only for manager peeps)
+    </p>
+
     <!-- Add a logout button -->
     <form th:action="@{/logout}" method="post">
         <button type="submit">logout</button>

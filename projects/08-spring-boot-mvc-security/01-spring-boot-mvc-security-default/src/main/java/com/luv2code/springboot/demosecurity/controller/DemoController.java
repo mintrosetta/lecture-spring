@@ -5,12 +5,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/demo")
+@RequestMapping("")
 public class DemoController {
 
 	@GetMapping("")
-	public String showHome() {
+	public String showHomePage() {
 		return "home";
+	}
+
+	@GetMapping("/leaders")
+	public String showLeaderPage() {
+		return "leaders";
 	}
 	
 }
