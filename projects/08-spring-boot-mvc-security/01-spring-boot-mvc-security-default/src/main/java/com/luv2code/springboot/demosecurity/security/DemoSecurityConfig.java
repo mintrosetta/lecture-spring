@@ -28,11 +28,19 @@ public class DemoSecurityConfig {
          *   loginPrecessingUrl() ระบุ url ที่จะใช้ประมวลผลการเข้าสู่ระบบ
          *   permitAll() ทุกคนสามารถเข้าถึงสิ่งนี้ได้
          *   logout() ทำให้เมื่อมีการเรียกใช้ /logout จะทำการลบ session ของ user ออกและทำการ redirect ไปที่ login page
+         * 
+         *   requestMatchers() เมื่อ URL Path ของ request ตรงกับที่ระบุ
          *
          *   loginProcessingUrl ไม่จำเป็นต้องมี controller เนื่องจาก spring security จะจัดการให้เราเอง
          * */
     	
-    	http.authorizeHttpRequests(config -> config.anyRequest().authenticated())
+    	http.authorizeHttpRequests(config -> 
+            config
+                .requestMatchers("/").hasRole("EMPLOYEE")
+                .requestMatchers("/leaders/**").hasRole("MANAGER")
+                .requestMatchers("/system/**").hasRole("ADMIN")
+                .anyRequest()
+                .authenticated())
     		.formLogin(config -> config.loginPage("/auth/login").loginProcessingUrl("/auth/login-process").permitAll())
             .logout(config -> config.permitAll());
 
