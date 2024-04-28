@@ -38,7 +38,7 @@ public class DemoSecurityConfig {
             config
                 .requestMatchers("/").hasRole("EMPLOYEE")
                 .requestMatchers("/leaders/**").hasRole("MANAGER")
-                .requestMatchers("/system/**").hasRole("ADMIN")
+                .requestMatchers("/systems/**").hasRole("ADMIN")
                 .anyRequest()
                 .authenticated())
     		.formLogin(config -> config.loginPage("/auth/login").loginProcessingUrl("/auth/login-process").permitAll())
