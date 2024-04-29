@@ -13,4 +13,9 @@ public class AuthController {
         return "auth/login";
     }
 
+    // add request mapping for access-denied
+    @GetMapping("/access-denied")
+    public String showAccessDeniedPage() {
+        return "auth/access-denied";
+    }
 }

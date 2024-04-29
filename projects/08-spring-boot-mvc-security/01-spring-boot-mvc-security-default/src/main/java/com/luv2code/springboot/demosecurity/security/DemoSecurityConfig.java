@@ -42,7 +42,8 @@ public class DemoSecurityConfig {
                 .anyRequest()
                 .authenticated())
     		.formLogin(config -> config.loginPage("/auth/login").loginProcessingUrl("/auth/login-process").permitAll())
-            .logout(config -> config.permitAll());
+            .logout(config -> config.permitAll())
+            .exceptionHandling(config -> config.accessDeniedPage("/auth/access-denied"));
 
         return http.build();
     }
