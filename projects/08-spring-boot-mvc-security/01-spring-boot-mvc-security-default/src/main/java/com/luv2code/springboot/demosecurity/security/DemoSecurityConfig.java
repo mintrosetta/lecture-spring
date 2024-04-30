@@ -13,6 +13,7 @@ import org.springframework.security.web.SecurityFilterChain;
 public class DemoSecurityConfig {
 
     // add support for JDBC, no more hard code for user
+    @Bean
     public UserDetailsManager userDetailsManager(DataSource dataSource) {
         return new JdbcUserDetailsManager(dataSource);
     }
