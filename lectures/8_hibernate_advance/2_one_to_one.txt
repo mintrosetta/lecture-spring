@@ -1,0 +1,2 @@
+One-to-One Mapping
+เข่น Instructor สามารถมี Instructor Detail ได้แค่อันเดียว
