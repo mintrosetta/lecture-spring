@@ -1,6 +1,6 @@
 package com.luv2code.cruddemo.dao;
 
-import com.luv2code.cruddemo.entities.Intructor;
+import com.luv2code.cruddemo.entities.Instructor;
 
 import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
@@ -17,7 +17,7 @@ public class AppDAOImpl  implements AppDAO {
 
     @Override
     @Transactional
-    public void save(Intructor instructor) {
+    public void save(Instructor instructor) {
         this.entityManager.persist(instructor);
     }
     

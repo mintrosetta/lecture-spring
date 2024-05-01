@@ -1,7 +1,7 @@
 package com.luv2code.cruddemo.dao;
 
-import com.luv2code.cruddemo.entities.Intructor;
+import com.luv2code.cruddemo.entities.Instructor;
 
 public interface AppDAO {
-    void save(Intructor instructor);
+    void save(Instructor instructor);
 }

@@ -12,7 +12,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "instructor")
-public class Intructor {
+public class Instructor {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,11 +32,11 @@ public class Intructor {
     @JoinColumn(name = "instuctor_detail_id")
     private InstructorDetail instructorDetail; 
 
-    public Intructor() {
+    public Instructor() {
         
     }
 
-    public Intructor(String firstName, String lastName, String email) {
+    public Instructor(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
