@@ -21,17 +21,35 @@ public class CruddemoApplication {
 	public CommandLineRunner commandLineRunner(AppDAO appDAO) {
 		//Java lampda expression
 		return runner -> {
-			createInstructor(appDAO);
+			// createInstructor(appDAO);
+			findInstructor(appDAO);
 		};
 	}
 
-	private void createInstructor(AppDAO appDAO) {
+	public void findInstructor(AppDAO appDAO) {
+		int id = 2;
+		System.out.println("Finding instructor id: " + id);
 
+		Instructor instructor = appDAO.findInstructorById(id);
+		System.out.println("Instructor: " + instructor.toString());
+		System.out.println("Has details: " + instructor.getInstructorDetail().toString());
+	}
+
+	public void createInstructor(AppDAO appDAO) {
+
+		/* 
 		// create instance of instructor
 		Instructor instructor = new Instructor("Chad", "Dady", "test@gmail.com");
 
 		// create instance of instructor detail
 		InstructorDetail instructorDetail = new InstructorDetail("http://youtube.com/youtube", "Luv 2 code!!!");
+		*/
+
+		// create instance of instructor
+		Instructor instructor = new Instructor("Mint", "Rosetta", "mint.rosetta2001@gmail.com");
+
+		// create instance of instructor detail
+		InstructorDetail instructorDetail = new InstructorDetail("http://youtube.com/youtube", "Mint Rosetta");
 
 		// add detail instance to instructor
 		instructor.setInstructorDetail(instructorDetail);
