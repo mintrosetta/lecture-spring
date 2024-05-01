@@ -22,8 +22,16 @@ public class CruddemoApplication {
 		//Java lampda expression
 		return runner -> {
 			// createInstructor(appDAO);
-			findInstructor(appDAO);
+			// findInstructor(appDAO);
+			removeInstructor(appDAO);
 		};
+	}
+
+	public void removeInstructor(AppDAO appDAO) {
+		int id = 2;
+		System.out.println("Deleting instructor id: " + id);
+		appDAO.removeInstructorById(id);
+		System.out.println("Done!");
 	}
 
 	public void findInstructor(AppDAO appDAO) {
