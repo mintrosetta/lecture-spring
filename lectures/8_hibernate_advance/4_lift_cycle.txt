@@ -1,0 +1,18 @@
+Entity Life Cycle
+เป็นชุดของสถานะที่ hibernate คอยจัดการให้ใน application ของเรา
+    > Transient
+    เมื่อ entity ถูกสร้างขึ้นใหม่ แต่ยังไม่ได้บันทึกลงฐานข้อมูล
+
+    > Persistent
+    เมื่อ entity ถูกจัดการโดย hibernate และบันทึกลงฐานข้อมูลแล้ว โดย hibernate จะติดตามการเปลี่ยนแปลงของสถานะและทำการ
+    เปลี่ยนแปลงข้อมูลในฐานข้อมูล ตามสถานะของวัตถุที่เปลี่ยนไป
+
+    > Detached
+    เมื่อ entity ถูกตัดการเชื่อมต่อออกจาก hibernate หรือ session ถูกปิด
+    ในสถานะนี้วัตถุจะยังอยู่ในหน่วยความจำ แต่จะไม่ถูก hibernate ติดตาม
+
+    > Removed
+    เมื่อลบวัตถุออกจากฐานข้อมูล มันจะอยู่ในสถานะนี้
+
+    
+    Ref: https://tountoon.medium.com/jpa-entity-lifecycle-fcb02bd7fbaa
