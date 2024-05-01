@@ -1,0 +1,31 @@
+Database Cascade
+    Persist
+        เมื่อข้อมูลหลักถูกบันทึก ข้อมูลที่มีความเกี่ยวข้องก็จะถูกบันทึกด้วย
+        เช่น Instructor ถูกบันทึก, Instructor_Detail กูจะถูกบันทึกด้วย
+
+    Delete
+        เมื่อตารางหลักถูกลบ ตารางที่่มีความสัมพันธ์ด้วยก็จะถูกลบไปด้วย
+
+    Refresh
+        เมื่อ entity ถูกสั่งให้ Refresh มันจะดึงข้อมูลตารางที่เกี่ยวข้องใหม่ด้วย
+    
+    Detach
+
+    Merge
+
+    All
+
+    โดยเราสามารถกำหนด cascade type ได้ดังนี้
+        @OneToOne(cascade = CascadeType.ALL)
+        @JoinColumn(name = "instructor_detail_id")
+        private InstructorDetail instructorDetail;
+
+        @OneToOne(cascade = {
+            CascadeType.DETACH,
+            CascadeType.MERGE,
+            CascadeType.PERSIST
+        })
+        @JoinColumn(name = "instructor_detail_id")
+        private InstructorDetail instructorDetail;
+
+    
