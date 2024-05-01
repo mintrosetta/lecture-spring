@@ -1,0 +1,6 @@
+Annotation
+    > @OneToOne
+    บอก Hibernate ว่า column นี้จะเกิดการ join table แบบ one to one
+
+    > @JoinColumn(name="{column_name}")
+    ใช้สำหรับระบุว่าจะเชื่อมตารางกันด้วย column อะไร
