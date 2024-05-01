@@ -4,3 +4,7 @@ One-to-One Mapping
  @OneToOne 
 @JoinColumn(name = "instructor_detail_id")
 private InstructorDetail instructorDetail;
+
+@OneToOne(mappedBy = "{field_name}")
+ใช้กับตารางลูก ที่ต้องชี้ไปหาตารางแม่ โดย mappedBy จะเป็นการระบุว่า
+ทั้ง 2 ตารางเชื่อมต่อกันได้ field อะไร
