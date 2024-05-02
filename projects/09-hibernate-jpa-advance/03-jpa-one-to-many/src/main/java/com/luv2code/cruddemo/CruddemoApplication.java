@@ -1,4 +1,4 @@
-package com.luv2code.cruddemo;
+	package com.luv2code.cruddemo;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -25,8 +25,19 @@ public class CruddemoApplication {
 			// findInstructor(appDAO);
 			// removeInstructor(appDAO);
 			// findInstructorDetail(appDAO);
-			removeInstructorDetail(appDAO);
+			// removeInstructorDetail(appDAO);
+			createInstructorWithCourses(appDAO);
 		};
+	}
+
+	public void createInstructorWithCourses(AppDAO appDAO) {
+		// create instance of instructor
+		Instructor instructor = new Instructor("Mint", "Rosetta", "mint.rosetta2001@gmail.com");
+
+		// create instance of instructor detail
+		InstructorDetail instructorDetail = new InstructorDetail("http://youtube.com/youtube", "Mint Rosetta");
+	
+		instructor.setInstructorDetail(instructorDetail);
 	}
 
 	public void removeInstructorDetail(AppDAO appDAO) {
