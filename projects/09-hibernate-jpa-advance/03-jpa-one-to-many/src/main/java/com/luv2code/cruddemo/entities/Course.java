@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -19,7 +20,7 @@ public class Course {
     @Column(name = "title")
     private String title;
 
-    @Column(name = "instructor")
+    @ManyToOne()
     private Instructor instructor;
 
     public Course() {
