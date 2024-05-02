@@ -1,5 +1,8 @@
 package com.luv2code.cruddemo.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -7,6 +10,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
@@ -31,6 +35,14 @@ public class Instructor {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "instructor_detail_id")
     private InstructorDetail instructorDetail; 
+
+    @OneToMany(mappedBy = "instructor", cascade = {
+        CascadeType.PERSIST,
+        CascadeType.MERGE,
+        CascadeType.DETACH,
+        CascadeType.REFRESH
+    }) // ระบุ properties ของ course ที่ชื้อมายัง instructor
+    private List<Course> courses;
 
     public Instructor() {
         
@@ -82,10 +94,28 @@ public class Instructor {
         this.instructorDetail = instructorDetail;
     }
 
+    public List<Course> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(List<Course> courses) {
+        this.courses = courses;
+    }
+
     @Override
     public String toString() {
         return "Intructor [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
                 + ", instructorDetail=" + instructorDetail + "]";
     }
 
+    // add convenience method for bi-directional relationship
+    public void add(Course course) {
+        if (this.courses == null) {
+            this.courses = new ArrayList<>();
+        } else {
+            course.setInstructor(this);
+
+            this.courses.add(course);
+        }
+    }
 }
