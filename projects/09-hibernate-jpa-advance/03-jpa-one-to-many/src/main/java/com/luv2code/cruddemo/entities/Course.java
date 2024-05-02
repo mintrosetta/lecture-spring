@@ -1,10 +1,12 @@
 package com.luv2code.cruddemo.entities;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
@@ -20,7 +22,13 @@ public class Course {
     @Column(name = "title")
     private String title;
 
-    @ManyToOne()
+    @ManyToOne(cascade = {
+        CascadeType.PERSIST,
+        CascadeType.MERGE,
+        CascadeType.DETACH,
+        CascadeType.REFRESH
+    })
+    @JoinColumn(name = "instructor_id") // ระบุ column ที่กับ id ที่ชี้ไปยังผู้สอนที่เป็นเจ้าของวิชา
     private Instructor instructor;
 
     public Course() {
