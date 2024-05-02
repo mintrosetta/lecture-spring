@@ -110,12 +110,9 @@ public class Instructor {
 
     // add convenience method for bi-directional relationship
     public void add(Course course) {
-        if (this.courses == null) {
-            this.courses = new ArrayList<>();
-        } else {
-            course.setInstructor(this);
+        if (this.courses == null) this.courses = new ArrayList<>();
 
-            this.courses.add(course);
-        }
+        course.setInstructor(this);
+        this.courses.add(course);
     }
 }

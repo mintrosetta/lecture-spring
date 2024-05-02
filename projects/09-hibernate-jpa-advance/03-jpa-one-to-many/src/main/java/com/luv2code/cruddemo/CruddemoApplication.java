@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 import com.luv2code.cruddemo.dao.AppDAO;
+import com.luv2code.cruddemo.entities.Course;
 import com.luv2code.cruddemo.entities.Instructor;
 import com.luv2code.cruddemo.entities.InstructorDetail;
 
@@ -38,6 +39,19 @@ public class CruddemoApplication {
 		InstructorDetail instructorDetail = new InstructorDetail("http://youtube.com/youtube", "Mint Rosetta");
 	
 		instructor.setInstructorDetail(instructorDetail);
+
+		Course course1 = new Course("Course 1");
+		Course course2 = new Course("Course 2");
+		Course course3 = new Course("Course 3");
+
+		instructor.add(course1);
+		instructor.add(course2);
+		instructor.add(course3);
+
+		appDAO.save(instructor);
+
+		System.out.println("Saving instructor: " + instructor.toString());
+		System.out.println("Done!!");
 	}
 
 	public void removeInstructorDetail(AppDAO appDAO) {
