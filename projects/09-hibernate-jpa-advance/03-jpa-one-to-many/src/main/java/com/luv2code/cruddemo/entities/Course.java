@@ -28,6 +28,7 @@ public class Course {
         CascadeType.DETACH,
         CascadeType.REFRESH
     })
+    
     @JoinColumn(name = "instructor_id") // ระบุ column ที่กับ id ที่ชี้ไปยังผู้สอนที่เป็นเจ้าของวิชา
     private Instructor instructor;
 
