@@ -1,5 +1,7 @@
 	package com.luv2code.cruddemo;
 
+import java.util.List;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -28,11 +30,29 @@ public class CruddemoApplication {
 			// findInstructorDetail(appDAO);
 			// removeInstructorDetail(appDAO);
 			// createInstructorWithCourses(appDAO);
-			findInstructorWithCourses(appDAO);
+			// findInstructorWithCourses(appDAO);
+			findCoursesForInstructor(appDAO);
 		};
 	}
 
-	private void findInstructorWithCourses(AppDAO appDAO) {
+	private void findCoursesForInstructor(AppDAO appDAO) {
+		int id = 7;
+		System.out.println("Finding instructor id: " + id);
+
+		Instructor instructor = appDAO.findInstructorById(id);
+
+		System.out.println(instructor.toString());
+
+		// find courses
+		System.out.println("Finding courses for instructor id: " + id);
+		List<Course> courses = appDAO.findCoursesByInstructorId(id);
+		instructor.setCourses(courses);
+		
+		System.out.println("Courses: " + instructor.getCourses());
+		System.out.println("Done!");
+	}
+
+	public void findInstructorWithCourses(AppDAO appDAO) {
 		int id = 7;
 		System.out.println("Finding instructor id: " + id);
 
