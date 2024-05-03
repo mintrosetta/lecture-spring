@@ -1,11 +1,15 @@
 package com.luv2code.cruddemo.dao;
 
+import java.util.List;
+
 import org.springframework.stereotype.Repository;
 
+import com.luv2code.cruddemo.entities.Course;
 import com.luv2code.cruddemo.entities.Instructor;
 import com.luv2code.cruddemo.entities.InstructorDetail;
 
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.TypedQuery;
 import jakarta.transaction.Transactional;
 
 @Repository
@@ -54,6 +58,14 @@ public class AppDAOImpl implements AppDAO {
         instructorDetail.getInstructor().setInstructorDetail(null);
 
         this.entityManager.remove(instructorDetail);
+    }
+
+    @Override
+    public List<Course> findCoursesByInstructorId(int id) {
+        TypedQuery<Course> query = this.entityManager.createQuery("FROM Course WHERE instructor.id = :data", Course.class);
+        query.setParameter("data", id);
+
+        return query.getResultList();
     }
     
 }

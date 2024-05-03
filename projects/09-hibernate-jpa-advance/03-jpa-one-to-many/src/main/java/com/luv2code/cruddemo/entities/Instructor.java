@@ -42,7 +42,7 @@ public class Instructor {
         CascadeType.MERGE,
         CascadeType.DETACH,
         CascadeType.REFRESH
-    }, fetch = FetchType.EAGER) // ระบุ properties ของ course ที่ชื้อมายัง instructor
+    }, fetch = FetchType.LAZY) // ระบุ properties ของ course ที่ชื้อมายัง instructor
     private List<Course> courses;
 
     public Instructor() {
