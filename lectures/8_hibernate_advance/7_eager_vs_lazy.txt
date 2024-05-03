@@ -1,0 +1,13 @@
+Eager vs Lazy
+    Eager 
+        จะทำการโหลดทุกอย่างพร้อมกัน
+    Lazy (Best Practice)
+        จะโหลดก็ต่อเมื่อมี่การร้องขอเท่านั้น
+        โดยมันจะทำการโหลด main entity ก่อน
+        แล้วเมื่อมีการร้องขอ dependent entity ทัรจึงค่อยโหลด
+
+Default Type
+    @OneToOne   FetchType.EAGER 
+    @OneToMany  FetchType.LAZY 
+    @ManyToOne  FetchType.EAGER
+    @ManyToMany FetchType.LAZY
