@@ -24,11 +24,20 @@ public class CruddemoApplication {
 			// createCourseAndStudent(appDAO);
 			// getCourseWithStudents(appDAO);
 			// getStudentWithCourses(appDAO);
-			addMoreCourseToStudent(appDAO);
+			// addMoreCourseToStudent(appDAO);
+			deleteCourse(appDAO);
 		};
 	}
 
-	private void addMoreCourseToStudent(AppDAO appDAO) {
+	private void deleteCourse(AppDAO appDAO) {
+		int courseId = 11;
+
+		appDAO.removeCourseById(courseId);
+
+		System.out.println("Done!");
+	}
+
+	public void addMoreCourseToStudent(AppDAO appDAO) {
 		int studentId = 1;
 
 		Student student = appDAO.findStudentWithCourseByStudentId(studentId);
