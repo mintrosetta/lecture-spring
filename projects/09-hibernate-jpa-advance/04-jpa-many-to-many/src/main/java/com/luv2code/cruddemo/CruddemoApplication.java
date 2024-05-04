@@ -21,11 +21,21 @@ public class CruddemoApplication {
 	public CommandLineRunner commandLineRunner(AppDAO appDAO) {
 		//Java lampda expression
 		return runner -> {
-			createCourseAndStudent(appDAO);
+			// createCourseAndStudent(appDAO);
+			getCourseWithStudents(appDAO);
 		};
 	}
 
-	private void createCourseAndStudent(AppDAO appDAO) {
+	public void getCourseWithStudents(AppDAO appDAO) {
+		int courseId = 10;
+		
+		Course course = appDAO.findCourseWithStudentByCourseId(courseId);
+
+		System.out.println(course.toString());
+		System.out.println(course.getStudents().toString());
+	}
+
+	public void createCourseAndStudent(AppDAO appDAO) {
 		Course course = new Course();
 		course.addStudent(new Student("Chanokchon", "Wongjampa", "a@gmail.com"));
 		course.addStudent(new Student("Bike", "Colorfuls", "b@gmail.com"));
