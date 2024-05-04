@@ -159,4 +159,12 @@ public class AppDAOImpl implements AppDAO {
         return this.entityManager.find(Student.class, id);
     }
 
+    @Override
+    @Transactional
+    public void removeStudentById(int id) {
+        Student student = this.findStudent(id);
+
+        if (student != null) this.entityManager.remove(student);
+    }
+
 }
