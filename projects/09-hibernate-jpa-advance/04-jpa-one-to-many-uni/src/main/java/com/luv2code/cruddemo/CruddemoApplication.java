@@ -21,8 +21,31 @@ public class CruddemoApplication {
 	public CommandLineRunner commandLineRunner(AppDAO appDAO) {
 		//Java lampda expression
 		return runner -> {
-			createCourseWithReview(appDAO);
+			// createCourseWithReview(appDAO);
+			// getCourseWithReview(appDAO);
+			deleteCourseWithReview(appDAO);
 		};
+	}
+
+	public void deleteCourseWithReview(AppDAO appDAO) {
+		int courseId = 10;
+
+		System.out.println("Deleting course id: " + courseId);
+
+		// will remove review because
+		appDAO.removeCourseById(courseId);
+
+		System.out.println("Done!");
+	}
+
+	public void getCourseWithReview(AppDAO appDAO) {
+		int courseId = 10;
+
+		Course course = appDAO.findCourseWithReviewByCourseId(courseId);
+
+		System.out.println(course.toString());
+
+		System.out.println(course.getReviews().toString());
 	}
 
 	public void createCourseWithReview(AppDAO appDAO) {
