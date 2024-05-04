@@ -41,7 +41,7 @@ public class Course {
     @JoinColumn(name = "course_id")
     private List<Review> reviews;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = {
+    @OneToMany(fetch = FetchType.LAZY, cascade = {
         CascadeType.PERSIST,
         CascadeType.MERGE,
         CascadeType.DETACH,
