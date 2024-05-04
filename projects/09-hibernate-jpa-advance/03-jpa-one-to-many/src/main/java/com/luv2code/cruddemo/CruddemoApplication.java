@@ -33,11 +33,23 @@ public class CruddemoApplication {
 			// findInstructorWithCourses(appDAO);
 			// findCoursesForInstructor(appDAO);
 			// findInstructorWithCoursesJoinFetch(appDAO);
-			updateInstructor(appDAO);
+			// updateInstructor(appDAO);
+			updateCourse(appDAO);
 		};
 	}
 
-	private void updateInstructor(AppDAO appDAO) {
+	public void updateCourse(AppDAO appDAO) {
+		int courseId = 26;
+
+		Course course = appDAO.findCourseById(courseId);
+		course.setTitle("Java Software Development");
+
+		appDAO.updateCourse(course);
+
+		System.out.println("Done!!!");
+	}
+
+	public void updateInstructor(AppDAO appDAO) {
 		int id = 7;
 
 		Instructor instructor = appDAO.findInstructorById(id);

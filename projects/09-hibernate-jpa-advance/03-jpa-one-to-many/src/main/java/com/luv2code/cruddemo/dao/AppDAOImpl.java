@@ -84,6 +84,17 @@ public class AppDAOImpl implements AppDAO {
     public void updateInstructor(Instructor instructor) {
         this.entityManager.merge(instructor); // update if id is not null, create if id is null
     }
+
+    @Override
+    @Transactional
+    public void updateCourse(Course course) {
+        this.entityManager.merge(course);
+    }
+
+    @Override
+    public Course findCourseById(int id) {
+        return this.entityManager.find(Course.class, id);
+    }
     
 }
  
