@@ -37,11 +37,19 @@ public class AppDAOImpl implements AppDAO {
     @Override
     @Transactional
     public void removeInstructorById(int id) {
-       // retrieve the instructor
+        // retrieve the instructor
         Instructor instructor = this.entityManager.find(Instructor.class, id);
+        
+        // get the course
+        List<Course> courses = this.findCoursesByInstructorId(id);
 
-       // delete instructor
-       this.entityManager.remove(instructor);
+        // break association of all course for the instructor
+        for (Course course : courses) {
+            course.setInstructor(null);
+        }
+
+        // delete instructor
+        this.entityManager.remove(instructor);
     }
 
     @Override
@@ -53,7 +61,7 @@ public class AppDAOImpl implements AppDAO {
     @Transactional
     public void removeInstructorDetailById(int id) {
         InstructorDetail instructorDetail = this.entityManager.find(InstructorDetail.class, id);
-        
+
         // break bi-directional link
         instructorDetail.getInstructor().setInstructorDetail(null);
 
@@ -62,7 +70,8 @@ public class AppDAOImpl implements AppDAO {
 
     @Override
     public List<Course> findCoursesByInstructorId(int id) {
-        TypedQuery<Course> query = this.entityManager.createQuery("FROM Course WHERE instructor.id = :data", Course.class);
+        TypedQuery<Course> query = this.entityManager.createQuery("FROM Course WHERE instructor.id = :data",
+                Course.class);
         query.setParameter("data", id);
 
         return query.getResultList();
@@ -72,7 +81,7 @@ public class AppDAOImpl implements AppDAO {
     public Instructor findInstructorByIdJoinFetch(int id) {
         // create query
         String queryString = "SELECT i FROM Instructor i JOIN FETCH i.courses JOIN FETCH i.instructorDetail WHERE i.id = :data";
-        
+
         TypedQuery<Instructor> query = this.entityManager.createQuery(queryString, Instructor.class);
         query.setParameter("data", id);
 
@@ -95,6 +104,5 @@ public class AppDAOImpl implements AppDAO {
     public Course findCourseById(int id) {
         return this.entityManager.find(Course.class, id);
     }
-    
+
 }
- 
