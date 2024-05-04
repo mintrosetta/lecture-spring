@@ -22,8 +22,30 @@ public class CruddemoApplication {
 		//Java lampda expression
 		return runner -> {
 			// createCourseAndStudent(appDAO);
-			getCourseWithStudents(appDAO);
+			// getCourseWithStudents(appDAO);
+			// getStudentWithCourses(appDAO);
+			addMoreCourseToStudent(appDAO);
 		};
+	}
+
+	private void addMoreCourseToStudent(AppDAO appDAO) {
+		int studentId = 1;
+
+		Student student = appDAO.findStudentWithCourseByStudentId(studentId);
+
+		student.addCourse(new Course("C# Development"));
+
+		appDAO.update(student);
+
+		System.out.println("Done!");
+	}
+
+	public void getStudentWithCourses(AppDAO appDAO) {
+		int studentId = 1;
+		Student student = appDAO.findStudentWithCourseByStudentId(studentId);
+
+		System.out.println(student.toString());
+		System.out.println(student.getCourses().toString());
 	}
 
 	public void getCourseWithStudents(AppDAO appDAO) {
